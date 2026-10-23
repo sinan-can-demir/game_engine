@@ -7,10 +7,7 @@ obj/
 *.so
 *.out
 
-# Executables (no extension on Linux, common names)
-test_*
-demo_*
-engine
+# Executables live in bin/ (already ignored above)
 
 # Editor / IDE
 .vscode/
