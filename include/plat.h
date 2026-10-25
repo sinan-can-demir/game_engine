@@ -1,3 +1,14 @@
+/**
+ * @file plat.h
+ * @author Sinan Can Demir
+ * @brief 
+ * @version 0.1
+ * @date 2026-10-23
+ * 
+ * @copyright Copyright (c) 2026
+ * 
+ */
+
 #ifndef PLAT_H
 #define PLAT_H
 
