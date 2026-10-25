@@ -1,7 +1,7 @@
 /**
  * @file platform_linux.c
  * @author Sinan Can Demir
- * @brief 
+ * @brief Linux implementation of the platform abstraction layer (PAL).
  * @version 0.1
  * @date 2026-10-23
  * 
@@ -13,25 +13,17 @@
 
 #include "plat.h"
 #include <time.h>
-#include <errno.h>
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-uint64_t const SEC_TO_NSEC = 1000000000;
-
-char* str_error(){
-    return strerror(errno);
-}
-
-void get_error_message(char *s){
-    perror(s);
-}
+static uint64_t const SEC_TO_NSEC = 1000000000;  // global constant for nano second to second conversion
 
 uint64_t plat_time_ns(void){
     struct timespec ts;  // has nanoseconds
     
     if (clock_gettime(CLOCK_MONOTONIC, &ts) == -1){
-        get_error_message(str_error());
+        perror("clock_gettime");
+        abort();
     }
     uint64_t total = (ts.tv_sec * SEC_TO_NSEC) + ts.tv_nsec;
 

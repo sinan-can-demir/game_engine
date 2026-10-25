@@ -1,7 +1,7 @@
 /**
  * @file plat.h
  * @author Sinan Can Demir
- * @brief 
+ * @brief Public API for the platform abstraction layer (PAL).
  * @version 0.1
  * @date 2026-10-23
  * 
